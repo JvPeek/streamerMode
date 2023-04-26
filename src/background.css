@@ -1,0 +1,6 @@
+body {
+    filter: blur(10px);
+}
+.noBlurFilter {
+    filter: none !important;
+}

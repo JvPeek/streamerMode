@@ -1,12 +1,17 @@
 {
   "name": "streamer mode",
   "description": "Hides your sensitive information on stream.",
-  "homepage_url": "https://github.com/llagerlof/fresh-chrome-extension",
+  "homepage_url": "https://github.com/jvpeek/streamerMode",
   "version": "0.0.1",
   "author": "twitch.tv/JvPeek",
   "manifest_version": 3,
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
   "action": {
-    "default_title": "StreamerMode"
+    "default_title": "StreamerMode",
+    "default_popup": "popup.html"
   },
   "icons": {
     "16": "icon16.png",
@@ -17,6 +22,9 @@
   "content_scripts": [
     {
       "run_at": "document_idle",
+      "css": [
+        "background.css"
+      ],
       "js": [
         "after.js"
       ],
@@ -27,12 +35,10 @@
       "all_frames": true
     }
   ],
-  "background": {
-    "service_worker": "background.js"
-  },
   "permissions": [
     "tabs",
-    "scripting"
+    "scripting",
+    "storage"
   ],
   "host_permissions": [
     "https://*/*",

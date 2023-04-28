@@ -1,0 +1,36 @@
+body {
+    background: #222;
+}
+table {
+    color: white;
+}
+table td {
+    background: rgba(255,255,255,0.1);
+    padding: 2px 10px;
+}
+table .column0 {
+    color: black;
+    background: black;
+    position: relative;
+}
+
+table .column0::before {
+    content:"HIDDEN";
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    left: 0px; right: 0px;
+    color: white;
+    background: black;
+}
+
+table.uncensored .column0,
+table .column0:hover
+{
+    color: white;
+    background: none;
+}
+table.uncensored .column0::before,
+table .column0:hover::before{
+    display: none;
+}
